@@ -6,9 +6,7 @@ public class ForLoops {
     public static void forSum() {
         int sum = 0;
         System.out.println("Input a number: ");
-        int limit = s.nextInt();
-        //  would this be better? : for (int i = s.nextInt(); i > 0; i-- ) {
-        for (int i = 1; i <= limit; i++ ) {
+        for (int i = s.nextInt(); i > 0; i-- ) {
             sum += i;
         }
         System.out.println("The sum is: " + sum);
