@@ -8,13 +8,18 @@ class ReWrites {
         double sum = 0.0;
         int count = 0;
         System.out.println("Ths program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
-        while(!(l = s.nextLine()).toUpperCase().equals("Q")) {
-            try {
-                sum += Integer.parseInt(l);
-                count++;
-            } catch (NumberFormatException nfe) {}
+        for (;;){
+            l = s.nextLine();
+            if (l.equalsIgnoreCase("Q")) {
+                break;
+            }
+            else {
+                try {
+                    sum += Integer.parseInt(l);
+                    count++;
+                } catch (NumberFormatException nfe) {}
+            }
         }
-
         System.out.printf("Average is: %f%n", (sum/count));
     }
     public static void sumRewrite() {
@@ -31,7 +36,9 @@ class ReWrites {
                 }
                 System.out.println("Adding " + x);
                 sum += x;
-            } catch (NumberFormatException nfe) {}
+            } catch (NumberFormatException nfe) {
+                System.out.println("Input was not an Integer.\n");
+            }
         }
 
         System.out.printf("Sum: %d%nGood Bye%n", sum);
